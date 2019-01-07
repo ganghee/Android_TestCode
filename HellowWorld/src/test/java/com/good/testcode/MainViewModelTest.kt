@@ -20,7 +20,6 @@ class MainViewModelTest {
 
     @Test
     fun 버튼을누르면_메인화면에서_hellowWorld가나타난다() {
-        assertThat(mainViewModel.getText().value, `is`("Hello World"))
+        assertThat(mainViewModel.helloText.value, `is`("Hello World!"))
     }
-
 }
