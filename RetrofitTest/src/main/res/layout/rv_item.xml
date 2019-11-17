@@ -1,34 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_marginHorizontal="10dp"
-    android:layout_marginVertical="3dp"
-    android:elevation="2dp"
-    app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="10dp">
+<layout>
 
-    <LinearLayout
+    <data>
+
+        <variable
+            name="item"
+            type="com.good.myweather.data.X" />
+        <variable
+            name="item2"
+            type="com.good.myweather.data.Weather" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="3dp"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp">
 
-        <TextView
-            android:id="@+id/textview_date"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="2019년 11월 11일" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textview_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="맑음"
-            android:layout_marginStart="100dp"/>
+            <TextView
+                android:id="@+id/textview_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= "@{item.dt}" />
+
+            <TextView
+                android:id="@+id/textview_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:text="@{item2.description}" />
 
 
-    </LinearLayout>
+        </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+</layout>

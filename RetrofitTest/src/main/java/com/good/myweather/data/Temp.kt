@@ -1,4 +1,4 @@
-package com.good.myweather.repository.data
+package com.good.myweather.data
 
 
 import com.google.gson.annotations.SerializedName

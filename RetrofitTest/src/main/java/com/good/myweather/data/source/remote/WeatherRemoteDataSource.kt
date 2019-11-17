@@ -1,7 +1,7 @@
-package com.good.myweather.data.remote
+package com.good.myweather.data.source.remote
 
-import com.good.myweather.data.WeatherResponse
-import com.good.myweather.data.WeatherService
+import com.good.myweather.data.source.WeatherResponse
+import com.good.myweather.data.source.WeatherService
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 import retrofit2.Retrofit

@@ -2,7 +2,7 @@ package com.good.myweather.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.good.myweather.repository.data.X
+import com.good.myweather.data.X
 import kotlinx.android.synthetic.main.rv_item.view.*
 
 class WeatherViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
