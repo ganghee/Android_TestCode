@@ -6,6 +6,7 @@
         <variable
             name="item"
             type="com.good.myweather.data.X" />
+
         <variable
             name="item2"
             type="com.good.myweather.data.Weather" />
@@ -32,7 +33,7 @@
                 android:id="@+id/textview_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text= "@{item.dt}" />
+                android:text="@{item.dt}" />
 
             <TextView
                 android:id="@+id/textview_description"
