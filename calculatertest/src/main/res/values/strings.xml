@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CalculaterTest</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="multiple">*</string>
+    <string name="division">/</string>
+</resources>
