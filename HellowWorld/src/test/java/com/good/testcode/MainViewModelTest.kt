@@ -14,7 +14,7 @@ class MainViewModelTest {
     var instantExecutorRule = InstantTaskExecutorRule()
 
     @Before
-    fun setupViewModel(){
+    fun setupViewModel() {
         mainViewModel = MainViewModel()
     }
 

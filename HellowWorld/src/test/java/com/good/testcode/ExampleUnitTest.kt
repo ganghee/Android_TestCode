@@ -18,7 +18,7 @@ class ExampleUnitTest {
     fun observeText() {
         val mainViewModel = MainViewModel()
         val mainActivity = MainActivity()
-        assertEquals("Hellow World!",mainActivity.observeText())
+        assertEquals("Hellow World!", mainActivity.observeText())
 
     }
 }
