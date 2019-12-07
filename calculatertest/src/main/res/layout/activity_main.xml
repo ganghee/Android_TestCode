@@ -7,14 +7,14 @@
 
         <variable
             name="viewModel"
-            type="com.good.calculatertest.MainViewModel" />
+            type="com.good.calculatertest.ui.MainViewModel" />
     </data>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".ui.MainActivity">
 
 
         <LinearLayout
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20sp"
-                android:onClick="@{()->viewModel.calc('+')}"
+                android:onClick="@{()->viewModel.calc(`+`)}"
                 android:text="@string/plus"
                 android:textSize="30sp" />
 
@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20sp"
-                android:onClick="@{()->viewModel.calc('-')}"
+                android:onClick="@{()->viewModel.calc(`-`)}"
                 android:text="@string/minus"
                 android:textSize="30sp" />
 
@@ -52,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20sp"
-                android:onClick="@{()->viewModel.calc('*')}"
+                android:onClick="@{()->viewModel.calc(`*`)}"
                 android:text="@string/multiple"
                 android:textSize="30sp" />
 
@@ -60,7 +60,7 @@
                 android:id="@+id/div"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="@{()->viewModel.calc('/')}"
+                android:onClick="@{()->viewModel.calc(`/`)}"
                 android:text="@string/division"
                 android:textSize="30sp" />
 
@@ -73,12 +73,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="88dp"
             android:layout_marginTop="204dp"
+            android:gravity="center"
+            android:inputType="number"
             android:text="@={viewModel.firstNum}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView_indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="208dp"
@@ -95,6 +97,7 @@
             android:layout_height="42dp"
             android:layout_marginTop="204dp"
             android:layout_marginEnd="108dp"
+            android:gravity="center"
             android:text="@={viewModel.secondNum}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -118,8 +121,8 @@
             android:text="@={viewModel.result}"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.168"
+            app:layout_constraintHorizontal_bias="0.202"
             app:layout_constraintStart_toEndOf="@+id/textView_eq"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/textView_indicator" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

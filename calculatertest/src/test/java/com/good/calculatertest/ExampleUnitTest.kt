@@ -1,6 +1,7 @@
 package com.good.calculatertest
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.good.calculatertest.ui.MainViewModel
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
@@ -27,7 +28,7 @@ class ExampleUnitTest {
     fun `(given)2개의 숫자가 입력되고 (when)text창을 바꿀 때 버튼을 누르면 (then)결과창이 바뀐다(더하기)`() {
         mainViewModel.firstNum.postValue("3")
         mainViewModel.secondNum.postValue("5")
-        mainViewModel.calc('+')
+        mainViewModel.calc("+")
         assertEquals(mainViewModel.result.value, "8")
     }
 
@@ -35,7 +36,7 @@ class ExampleUnitTest {
     fun `(given)2개의 숫자가 입력되고 (when)text창을 바꿀 때 버튼을 누르면 (then)결과창이 바뀐다(빼기)`() {
         mainViewModel.firstNum.postValue("5")
         mainViewModel.secondNum.postValue("3")
-        mainViewModel.calc('-')
+        mainViewModel.calc("-")
         assertEquals(mainViewModel.result.value, "2")
 
     }
@@ -44,7 +45,7 @@ class ExampleUnitTest {
     fun `(given)2개의 숫자가 입력되고 (when)text창을 바꿀 때 버튼을 누르면 (then)결과창이 바뀐다(곱하기)`() {
         mainViewModel.firstNum.postValue("5")
         mainViewModel.secondNum.postValue("3")
-        mainViewModel.calc('*')
+        mainViewModel.calc("*")
         assertEquals(mainViewModel.result.value, "15")
     }
 
@@ -52,7 +53,7 @@ class ExampleUnitTest {
     fun `(given)2개의 숫자가 입력되고 (when)text창을 바꿀 때 버튼을 누르면 (then)결과창이 바뀐다(나누기)`() {
         mainViewModel.firstNum.postValue("5")
         mainViewModel.secondNum.postValue("3")
-        mainViewModel.calc('/')
+        mainViewModel.calc("/")
         assertEquals(mainViewModel.result.value, "1")
     }
 }
