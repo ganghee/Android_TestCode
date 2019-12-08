@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.good.logintest.ui.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.LoginActivity">
+
+        <TextView
+            android:id="@+id/textView_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="28dp"
+            android:gravity="center"
+            android:text="@string/id"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/ed_id"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="@string/input_id"
+            android:text="@={viewModel.id}"
+            app:layout_constraintBottom_toTopOf="@+id/ed_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.32"
+            app:layout_constraintStart_toEndOf="@+id/textView_id"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.102" />
+
+        <TextView
+            android:id="@+id/textView_faild_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wrong_type"
+            android:textColor="#f00"
+            android:textSize="12sp"
+            android:visibility="@{viewModel.isWrongEmailVisible ? View.VISIBLE : View.GONE}"
+            app:layout_constraintStart_toStartOf="@+id/ed_id"
+            app:layout_constraintTop_toBottomOf="@+id/ed_id" />
+
+        <TextView
+            android:id="@+id/textView_faild_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input_pw_more_six"
+            android:textColor="#f00"
+            android:textSize="12sp"
+            android:visibility="@{viewModel.isWrongPasswordVisible ? View.VISIBLE : View.GONE}"
+            app:layout_constraintStart_toStartOf="@+id/ed_password"
+            app:layout_constraintTop_toBottomOf="@+id/ed_password" />
+
+        <EditText
+            android:id="@+id/ed_password"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_pw"
+            android:inputType="textPassword"
+            android:text="@={viewModel.pw}"
+            app:layout_constraintStart_toStartOf="@+id/ed_id"
+            app:layout_constraintTop_toTopOf="@+id/textView_password" />
+
+        <TextView
+            android:id="@+id/textView_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="28dp"
+            android:gravity="center"
+            android:text="@string/pw"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toStartOf="@+id/ed_password"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_id" />
+
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/button_selector"
+            android:onClick="@{()->viewModel.onLoginClick()}"
+            android:text="@string/login"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_password" />
+
+        <TextView
+            android:id="@+id/tv_signin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="@{()->viewModel.onSignUpClick()}"
+            android:text="@string/회원가입"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_login" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

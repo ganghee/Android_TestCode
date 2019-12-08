@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">LoginTest</string>
+    <string name="id">ID</string>
+    <string name="pw">PW</string>
+    <string name="login">로그인</string>
+    <string name="회원가입">회원가입 하기 ></string>
+    <string name="input_id">아이디 입력</string>
+    <string name="wrong_type">잘못된 형식입니다.</string>
+    <string name="input_pw">비밀번호 입력</string>
+    <string name="input_pw_more_six">비밀번호는 최소 6자리 입력해주세요</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
