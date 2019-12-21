@@ -1,6 +1,9 @@
 package com.good.logintest
 
+import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.good.logintest.delegate.ContextDelegate
+import com.good.logintest.delegate.ContextDelegateImpl
 import com.good.logintest.ui.LoginViewModel
 import org.junit.Test
 
@@ -21,7 +24,7 @@ class ExampleUnitTest {
 
     @Before
     fun setupViewModel() {
-        loginViewModel = LoginViewModel()
+        loginViewModel = LoginViewModel(ContextDelegateTestImpl())
     }
 
     @Test
