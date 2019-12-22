@@ -1,24 +1,18 @@
 package com.good.logintest.ui
 
 
-import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
-
 import com.good.logintest.R
 import com.good.logintest.base.BaseFragment
 import com.good.logintest.databinding.FragmentLoginBinding
-import com.good.logintest.util.isValidEmail
+import com.good.logintest.delegate.ContextDelegateImpl
 import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login) {
 
-    private val loginViewModel by lazy { LoginViewModel() }
+    private val loginViewModel by lazy { LoginViewModel(ContextDelegateImpl(context)) }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -41,7 +35,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
                 button_login.isSelected = isButtonSelected.value!!
             })
             nextState.observe(this@LoginFragment, Observer {
-                Toast.makeText(requireContext(),"$it",Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "$it", Toast.LENGTH_SHORT).show()
             })
         }
     }
