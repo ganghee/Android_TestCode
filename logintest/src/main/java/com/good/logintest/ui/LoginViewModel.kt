@@ -2,12 +2,15 @@ package com.good.logintest.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.good.logintest.delegate.ContextDelegate
+import com.good.logintest.delegate.ContextDelegateImpl
 import com.good.logintest.util.isValidEmail
 import com.good.logintest.util.isValidPassword
 
-class LoginViewModel : ViewModel() {
+class LoginViewModel(private val contextDelegate: ContextDelegate) : ViewModel() {
     val id = MutableLiveData<String>()
     val pw = MutableLiveData<String>()
+    private fun getString(resId: Int) = contextDelegate.getString(resId)
 
     val isWrongEmailVisible = MutableLiveData<Boolean>().apply {
         value = false
