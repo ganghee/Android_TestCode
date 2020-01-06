@@ -26,7 +26,7 @@ class MainViewModelTest {
     fun 오픈api를통해데이터를가져오면_화면을실행할때_갯수가일치하는지확인() {
 
         mainViewModel.weatherList.observeForever {
-            assertEquals(6, it.size)
+            assertEquals(6, it.list)
         }
     }
 }
