@@ -1,7 +1,6 @@
 package com.good.calculatertest.ui
 
 import android.os.Bundle
-import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.good.calculatertest.R
@@ -19,10 +18,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         super.onCreate(savedInstanceState)
 
         binding.viewModel = mainViewModel
-        onDataBinding()
+        observeViewModel()
     }
 
-    private fun onDataBinding() {
+    private fun observeViewModel() {
         mainViewModel.apply {
             firstNum.observe(this@MainActivity, Observer {
                 textview_result.text = calc(textView_indicator.text.toString()).toString()
