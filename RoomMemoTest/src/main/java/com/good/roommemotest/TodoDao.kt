@@ -1,5 +1,4 @@
-
-package com.example.android.roomwordssample
+package com.good.roommemotest
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
