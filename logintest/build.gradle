@@ -5,7 +5,6 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
 
-
     defaultConfig {
         applicationId "com.good.logintest"
         minSdkVersion 23
@@ -56,4 +55,6 @@ dependencies {
     testImplementation "org.robolectric:robolectric:$robolectricVersion"
 
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+    testImplementation "org.mockito:mockito-core:$mockito"
+    androidTestImplementation "org.mockito:mockito-android:$mockito"
 }
