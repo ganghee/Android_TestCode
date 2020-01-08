@@ -1,5 +1,4 @@
-
-package com.example.android.roomwordssample
+package com.good.roommemotest
 
 import android.app.Activity
 import android.content.Intent
