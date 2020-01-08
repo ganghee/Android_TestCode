@@ -1,2 +1,2 @@
-include ':HellowWorld', ':RetrofitTest', ':calculatertest', ':logintest'
+include ':HellowWorld', ':RetrofitTest', ':calculatertest', ':logintest', ':RoomMemoTest'
 rootProject.name='TestCode'
