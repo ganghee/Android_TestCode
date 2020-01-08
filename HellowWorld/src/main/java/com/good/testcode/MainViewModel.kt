@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 
 open class MainViewModel : ViewModel() {
 
-    private val helloText = MutableLiveData<String>()
-    fun getText() = helloText
-
+    val helloText = MutableLiveData<String>().apply {
+        value = "Hello World!"
+    }
 }
