@@ -17,13 +17,9 @@ class MainActivity : AppCompatActivity() {
         button.onClick { observeText() }
     }
 
-    fun observeText(): String? {
-        viewModel.getText().postValue("Hello World")
-
-        viewModel.getText().observe(this, Observer {
+    fun observeText() {
+        viewModel.helloText.observe(this, Observer {
             main_text.text = it
         })
-
-        return viewModel.getText().value
     }
 }
